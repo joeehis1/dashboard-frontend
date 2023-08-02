@@ -107,16 +107,17 @@ export default function ExchangerMini({ currencyList }) {
     function navigateBackwards() {
         if (exchangeData) {
             setExchangeData(null);
+            setConversionShown(false);
             setFormData({
                 baseCurrency: "",
                 targetCurrency: "",
                 amount: 0,
             });
-            return setCurrentSelection(() => ({
+            return setCurrentSelection({
                 base: false,
                 target: false,
                 value: false,
-            }));
+            });
         }
         if (currentSelection.value) {
             setFormData((formData) => ({
