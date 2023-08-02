@@ -1,0 +1,122 @@
+@use '../variables' as *;
+
+.app-middle{
+    text-align: center;
+}
+
+
+.clocks {
+    position: relative;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        .clock-options{
+            visibility: visible;
+        }
+    }
+    .clock-text{
+        margin: 0;
+    }
+}
+
+
+.clock-options{
+    position: absolute;
+    text-align: left;
+    top: 0;
+    visibility: hidden;
+    &.is-visible{
+        visibility: visible;
+    }
+}
+
+
+.clock-controls{
+    margin: 0;
+    display: flex;
+    position: absolute;
+    top: -0.25rem;
+    gap: 0.6rem;
+    left: 3.8rem;
+    display: none;
+    &.is-shown{
+        display: flex;
+    }
+    
+}
+
+.timer-controls{
+    display: flex;
+    // margin: 0;
+    justify-content: space-around;
+}
+
+
+
+.daily-focus{
+    input{
+        background-color: transparent;
+        color: white;
+        font-size: inherit;
+        border: none;
+        max-width: 100%;
+        border-bottom: 2px solid;
+        border-radius: 0;
+        text-align: center;
+        &:focus{
+            outline: none;
+            
+        }
+    }
+}
+
+.taskbox{
+
+    .task-name{
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        .completed{
+            text-decoration: line-through;
+        }
+    }
+    .task{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.6rem;
+        margin-top: 0.8rem;
+    }
+    .task-title{
+        margin: 0;
+    }
+    .options{
+        position: relative;
+
+    }
+    .options-list{
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        
+        right: 0;
+        top: 2.4rem;
+        width: clamp(8.125rem, 11.25rem + 0.2vw, 14.4rem);
+        padding-block: 0.6rem;
+        background-color: $bg-dark-alternate;
+        border-radius: 6px;
+
+        &.hidden{
+            //this class is to make the options visible on click of the button with 3 dots btn-expand ref to base.scss
+            visibility: hidden;
+            pointer-events: none;
+        }
+        
+    }
+}
+
+.clock-face {
+    margin: 0;
+}

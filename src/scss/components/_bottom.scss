@@ -1,0 +1,216 @@
+@use '../variables' as *;
+
+.app-bottom{
+    position: relative;
+    margin-top: 7rem;
+    .grid{
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows: 2 auto;
+    }
+}
+
+
+
+
+
+.hovered-element {
+    .child-top {
+        transform: translateY(50%);
+        transition: all 550ms ease;
+    }
+
+    .child-bottom {
+        transform: translateY(-30%);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 550ms ease;
+    }
+
+    &:hover {
+        .child-top {
+            transform: translateY(0);
+        }
+
+        .child-bottom {
+            transform: translateY(0);
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.unsplash-image-attribution {
+    position: relative;
+    grid-row-start: 2;
+    grid-column:1/2;
+
+    p {
+        margin: 0;
+    }
+
+    .image-author {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+    }
+
+}
+
+.random-quote-display{
+    margin-bottom: 1.8rem;
+    p{
+        margin: 0;
+    }
+    text-align: center;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    .quote{
+        font-style: italic;
+    }
+    .author{
+        display: flex;
+        justify-content: center;
+        gap: 0.6rem;
+    }
+
+    //Remember to set up the min width media query for this section as well 
+}
+
+.todo-section{
+    grid-row-start: 2;
+    grid-column: 2/3;
+    justify-self: end;
+    align-self: start;
+    h2{
+        line-height: 1.05;
+    }
+}
+
+.todo-wrapper{
+    position: absolute;
+    background-color: $bg-dark-solid;
+    padding: 0.8rem;
+    border-radius: 7px;
+    bottom: 40%;
+    
+    left: 8%;
+    right: 8%;
+    transition: all 350ms ease;
+    @media (min-width: $vertical-widgets) {
+        left: 22%;
+        right: 22%;
+    }
+}
+
+.todo-content-wrapper{
+    position: relative;
+    // border: 1px solid;
+}
+
+
+.todo-menu{
+    background-color: $bg-dark-alternate-solid;
+    border-radius: 7px;
+    padding-block: 0.8rem;
+    position: absolute;
+    top: 0;
+    margin: 0;
+}
+
+.todo-item-controls{
+    // display: none;
+    //This is for the menu controlling what you want to do for any to do item
+    width: 8rem;
+    right: 1.5rem;
+}
+
+
+
+.todo-type-controls{
+    // display: none;
+    //This is for the menu controlling where you want to view or add to do items to.
+    width: 8rem;
+    left: 0;
+}
+.todo-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+    input {
+        width: 80%;
+        border: none;
+    }
+}
+
+.todo-area-if-empty{
+    p{
+        margin: 0;
+    }
+    padding-block: 2rem;
+    margin-block: 0.6rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.todo-items{
+    margin: 0;
+}
+
+.todo-item{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.item-selected{
+        background-color: $bg-selected
+    }
+
+    //to give consistent alignment to the items here
+    .col{
+        flex-grow: 0;
+        &:first-of-type{
+            
+            flex-basis: 80%;
+        }
+        &:last-of-type{
+            
+            flex-basis: 20%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    label{
+        //These styles served a purpose at some point. But it caused a small click issue. Leaving it as it might still be useful
+        // display: grid;
+        // grid-template-columns: 1.2rem 1fr;
+        // align-items: center;
+        // border: 1px solid;
+    }
+
+    .new-val-form-control{
+        display: grid;
+        grid-template-columns: 0.8fr 0.1fr 0.1fr;
+        grid-template-rows: auto;
+        align-items: center;
+        input{
+            border: none;
+            padding-block: 0;
+            background-color: transparent;
+            font-size: inherit;
+            color: $primary-color-text;
+            grid-column: 1/-1;
+            grid-row: 1/-1;
+            min-height: 100%;
+        }
+        .btn-cancel-edit{
+            grid-column: 2/-1;
+            grid-row: 1/-1;
+            justify-self: end;
+        }
+    }
+    
+}

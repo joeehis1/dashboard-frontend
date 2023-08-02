@@ -1,0 +1,25 @@
+$primary-color-text: #E8EAED;
+$neutral-color: #9AA0A6;
+
+//Background colors
+$bg-dark: #0f0f0fec;
+$bg-dark-solid: #0f0f0f;
+$bg-dark-alternate: #07091ff8;
+$bg-dark-alternate-solid: #07091f;
+$bg-neutral-transperent: #5481a7a6;
+$bg-menu-option: $bg-neutral-transperent;
+$bg-menu-option-hover: #d85a12;
+$bg-selected: #353333;
+$bg-exchanger: $bg-dark;
+//this back ground also applies to the exchanger inputs
+$bg-weather-app: $bg-dark;
+$base-label-color-exchanger-mini: #c7e9ff;
+$target-label-color-exchanger-mini: #8aa4f3;
+
+$bg-conversion-exchanger-mini: $bg-dark-alternate;
+$color-exchanger-mini: #a0a4d1;
+$bg-currency: $primary-color-text;
+
+$breakpoint : 450px;
+$currency-converter-breakpoint: 720px;
+$vertical-widgets: 660px;

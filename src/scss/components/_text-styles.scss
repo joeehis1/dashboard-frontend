@@ -1,0 +1,119 @@
+@use '../variables' as *;
+
+//Fonts -- large screen // small screen
+//136px(clock face) //60px //
+//54px(temp in weather dialog) //40px//
+//12.6px(text in weather dialog and text in forecast) // 14px //
+//18px(location in weather dialog) // 20px //
+//12.6px(weather condition in weather dialog should) // 14px
+//23.4px(temp in weather summary) // 22px
+//11.7px(location in weather summary) // 13px //
+
+//16px(Overall text for the currency exchanger)
+//36px(target currency--exchanger)
+//12px(date in exchanger)
+
+//48.6px(greeting message)//26px
+//28.35px(question) // 20px
+//11.7px(image attribution text - location) //13px
+//9.9px(image attribution text - name) //11px
+
+.text-clock {
+    font-size: clamp(2.5rem,
+        5.5rem + 0.6vw,
+        8.5rem);
+    font-weight: 500;
+}
+
+
+.text-dialog-mid {
+    font-size: 18px;
+
+    @media (min-width: $breakpoint) {
+        font-size: 20px;
+    }
+}
+
+.text-dialog-normal {
+    font-size: 0.78rem;
+
+    @media (min-width: $breakpoint) {
+        font-size: 0.87rem
+    }
+}
+
+.text-weather-summary-lg {
+    font-size: 1.375rem;
+
+    @media (min-width: $breakpoint) {
+        font-size: 1.4rem;
+    }
+}
+
+.text-weather-summary-sm {
+    font-size: 0.81rem;
+
+    @media (min-width: $breakpoint) {
+        font-size: 0.73rem
+    }
+}
+
+.text-clock-face{
+    font-size: 136px;
+    @media (min-width: $breakpoint) {
+        font-size: 60px;
+    }
+}
+
+.text-clock-text {
+    font-size: clamp(1.125rem,
+        2.08rem + 0.6vw,
+        3.04rem)
+}
+
+.text-form-focus{
+    font-size: clamp(1.25rem,
+        1.51rem + 0.6vw,
+        1.77rem)
+}
+
+.text-task-focus{
+    //1.0625rem, 1.14rem + 0.6vw, 1.25rem
+    font-size: clamp(1.0625rem,
+        1.14rem + 0.6vw,
+        1.25rem);
+}
+
+// .text-unsplash-lg {
+//     font-size: 13px;
+
+//     @media (min-width: $breakpoint) {
+//         font-size: 11.7px;
+//     }
+// }
+
+.text-unsplash {
+    font-size: 0.8rem;
+    @media (min-width: $breakpoint) {
+        font-size: clamp(0.6rem, 0.75rem + 0.6vw, 0.8rem)
+    }
+    
+}
+
+.text-quote{
+    font-size: clamp(0.75rem, 0.75rem + 0.6vw, 1.2rem);
+    font-weight: 500;
+}
+
+
+// .text-exchanger-lg{
+//     font-size: 36px;
+// }
+
+// .text-exchanger-sm{
+//     font-size: 12px;
+// }
+
+// .text-exchanger-normal{
+//     font-size: 16px;
+// }

@@ -1,0 +1,270 @@
+@use './variables' as *;
+
+:root{
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    color: $primary-color-text;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgba(11, 6, 44, 0.644);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    min-height: 100vh;
+}
+
+.container {
+    // border: 2px solid;
+    max-width: 1024px;
+    width: 92%;
+    margin: 0 auto;
+}
+
+main {
+    min-height: 100vh;
+    
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+}
+
+
+
+figure, blockquote{
+    margin: 0;
+    padding: 0;
+}
+
+//Generic Utility Classes
+
+
+input[type=number], select{
+    background-color: $bg-exchanger;
+    color: $primary-color-text;
+    border-radius: 7px;
+}
+
+input[type=number], select{
+    min-height: 2.5rem;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+}
+
+button {
+    
+    border: 1px solid;
+    padding: 0.4rem;
+    border-radius: 7px;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover{
+        background-color: $bg-exchanger;
+        color: $primary-color-text;
+    }
+    &:disabled{
+        background-color: $neutral-color;
+        cursor: not-allowed;
+        &:hover{
+            background-color: $neutral-color;
+            color: currentColor;
+        }
+    }
+}
+
+
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+
+
+input[type="checkbox"].custom{
+    appearance: none;
+    margin: 0;
+    background-color: transparent;
+    font: inherit;
+    color: currentColor;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before{
+        content: "";
+        width: 1.85rem;
+        height: 1.85rem;
+        background-color: white;
+        transform: translate(1px, -1px);
+        opacity: 0;
+        transition: opacity 350ms ease;
+        clip-path: polygon(47% 55%, 83% 2%, 100% 12%, 89% 29%, 65% 64%, 49% 89%, 27% 72%, 0 53%, 8% 45%, 18% 34%);
+
+    }
+    &:checked{
+        &::before{
+            opacity: 1;
+        }
+    }
+    &:focus, &:focus-within{
+        outline: 2px solid currentColor;
+        outline-offset: 1px;
+    }
+}
+
+i{
+    display: inline-block;
+    font-weight:900;
+}
+
+.btn-filtered{
+    backdrop-filter: blur(5px);
+    color: white;
+    
+}
+
+.btn-transparent{
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+.btn-refresh-weather {
+    font-size: 1.1rem;
+    padding: 0;
+}
+
+.btn-flat{
+    border-radius: 0;
+}
+
+.btn-expand {
+    aspect-ratio: 1;
+    border: none;
+    color: $neutral-color;
+    display: grid;
+    place-items: center;
+}
+
+
+.btn-menu-option {
+    
+    width: 100%;
+    border: none;
+    text-align: left;
+    color: $primary-color-text;
+
+    &:hover {
+        background-color: $bg-menu-option-hover;
+    }
+}
+
+.btn-colored-menu-option{
+    background-color: $bg-menu-option;
+}
+
+
+.btn-clock-menu {
+    border: none;
+    border-radius: 40%;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    &:hover{
+        background-color: $bg-dark;
+    }
+}
+
+//control i.e play, pause, reset, next
+.btn-control {
+    padding: 0;
+    line-height: 1.1;
+    padding-inline: 0.6rem;
+    background-color: $bg-menu-option;
+}
+
+.btn-timer-control{
+    padding-block: 0.5rem;
+    padding-inline: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.btn-next-control{
+    color: white;
+}
+
+
+.btn-transperent-hovered-bg{
+    &:hover {
+        background-color: transparent;
+        color: $bg-menu-option-hover;
+    }
+}
+
+
+
+
+
+//the button that opens the to do list 
+
+.btn-todo-open{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.btn-todo-type-options-open{
+    text-align: left;
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+    gap: 0.5rem;
+    &:after{
+        content: "\27A4";
+        display: inline-block;
+        visibility: hidden;
+        transform: rotateZ(90deg);
+    }
+    &:hover{
+        background-color: transparent;
+        &:after{
+            visibility: visible;
+        }
+    }
+}
+
+.btn-cancel-edit{
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.reset-list{
+    padding: 0;
+    list-style: none;
+}
